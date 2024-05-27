@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Multi-step form</title>
+</head>
+<body>
+
+  <div id="main-container">
+
+  <!-- Sidebar start -->
+  <aside>
+    <section>
+      Step 1
+      Your info
+    </section>
+    
+    <section>
+      Step 2
+      Select plan
+    </section>
+    
+    <section>
+      Step 3
+      Add-ons
+    </section>
+
+    <section>
+      Step 4
+      Summary
+    </section>
+  </aside>
+  <!-- Sidebar end -->
+
+  <main>
+    <form>
+      <fieldset>
+        <!-- Step 1 start -->
+        <legend>Personal info</legend>
+  
+        <p>Please provide your name, email address, and phone number.</p>
+
+          <section>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="e.g. Stephen King">
+
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" placeholder="e.g. stephenking@lorem.com">
+
+            <label for="number">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. +1 234 567 890"
+            pattern="^[+]{1}(?:[0-9\-\\(\\)\\/.]\s?){6,15}[0-9]{1}$">
+          </section>
+
+          <section>
+            <input type="button" value="Next Step">
+          </section>
+
+          <!-- Step 1 end -->
+      </fieldset>
+
+      <fieldset>
+        <!-- Step 2 start -->
+        <legend>Select your plan</legend>
+
+        <p>You have the option of monthly or yearly billing.</p>
+
+        <section>
+          <div>
+
+            <label for="arcade">
+              <img src="/assets/images/icon-arcade.svg" alt="arcade icon">
+              <strong>Arcade</strong> 
+              <span>$9/mo</span>
+              <article>
+                <span>$90/yr</span>
+                <p>2 months free</p>
+              </article>
+            </label>
+            <input type="radio" id="arcade" name="option" value="arcade">
+          </div>
+
+          <div>
+            <label for="advanced">
+              <img src="/assets/images/icon-advanced.svg" alt="advances icon">
+              <strong>Advanced</strong>
+              <span>$12/mo</span>
+              <article>
+                <span>$120/yr</span>
+                <p>2 months free</p>
+              </article>
+            </label>
+            <input type="radio" id="advanced" name="option" value="advanced">
+          </div>
+
+          <div>
+            <label for="pro">
+              <img src="/assets/images/icon-pro.svg" alt="pro icon">
+              <strong>Pro</strong>
+              <span>$15/mo</span>
+              <article>
+                <span>$150/yr</span>
+                <p>2 months free</p>
+              </article>
+            </label>
+            <input type="radio" id="pro" name="option" value="pro">
+          </div>
+
+        </section>
+
+        <section>
+          <label for="monthly">Monthly</label>
+          <span>
+            <input type="radio" id="monthly" name="plan" value="monthly">
+            <input type="radio" id="yearly" name="plan" value="yearly">
+          </span>
+          <label for="yearly">Yearly</label>
+        </section>
+  
+        <section>
+            <input type="button" value="Go Back">
+            <input type="button" value="Next Step">
+        </section>
+        
+        <!-- Step 2 end -->
+      </fieldset>
+
+      <fieldset>
+       <!-- Step 3 start -->
+
+        <legend>Pick add-ons</legend>
+        <p>Add-ons help enhance your gaming experience.</p>
+
+        <section>
+          <input type="checkbox" id="checkbox1" value="Online service">
+          <label for="checkbox1">Online service</label>
+          <p>Access to multiplayer games</p>
+          <span>+$1/mo</span>
+        </section>
+
+        <section>
+          <input type="checkbox" id="checkbox2" value="Larger storage">
+          <label for="checkbox2">Larger storage</label>
+          <p>Extra 1TB of cloud save</p>
+          <span>+$2/mo</span>
+        </section>
+
+        <section>
+          <input type="checkbox" id="checkbox3" value="Customizable Profile">
+          <label for="checkbox3">Customizable Profile</label>
+          <p>Custom theme on your profile</p>
+          <span>+$2/mo</span>
+        </section>
+
+        <section>
+            <input type="button" value="Go Back">
+            <input type="button" value="Next Step">
+        </section>
+      <!-- Step 3 end -->
+      </fieldset>
+
+      <fieldset>
+        <!-- Step 4 start -->
+        <legend>Finishing up</legend>
+        <p>Double-check everything looks OK before confirming.</p>
+
+        <!-- Dynamically add subscription and add-on selections here -->
+        <section>
+          <section>
+            <div>
+              <p><strong>Arcade (monthly)</strong></p>  <!-- modify with JS -->
+              <button>change</button>
+            </div>
+            <div id="total"></div> <!-- modify with JS -->
+          </section>
+
+          <hr>
+
+          <section>
+            <div>
+              <p>Online service</p>  <!-- modify with JS -->
+              <p>+$1/mo</p>
+            </div>
+
+            <div>
+              <p>Larger</p>  <!-- modify with JS -->
+              <p>+$2/mo</p>
+            </div>
+          </section>
+
+          <section>
+              <p>Larger</p>  <!-- modify with JS -->
+              <p id="final-total">$12/mo</p>
+          </section>
+
+          <section>
+              <input type="button" value="Go Back">
+              <input type="submit" value="Confirm">
+          </section>
+        </section>
+        <!-- Step 4 end -->
+      </fieldset>
+      </form>
+       <!-- Step 5 start -->
+
+  <h5>Thank you!</h5>
+
+  <p>Thanks for confirming your subscription! We hope you have fun 
+  using our platform. If you ever need support, please feel free 
+  to email us at support@loremgaming.com.</p>
+
+  <!-- Step 5 end -->
+  </main>
+
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
